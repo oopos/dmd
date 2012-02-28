@@ -29,7 +29,10 @@ C=backend
 TK=tk
 ROOT=root
 
-MODEL=32
+# For now, 32 bit is the default model
+ifeq (,$(MODEL))
+	MODEL:=32
+endif
 
 ifeq (OSX,$(TARGET))
     ## See: http://developer.apple.com/documentation/developertools/conceptual/cross_development/Using/chapter_3_section_2.html#//apple_ref/doc/uid/20002000-1114311-BABGCAAB
